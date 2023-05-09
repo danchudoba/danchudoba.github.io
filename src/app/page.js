@@ -1,95 +1,222 @@
+import useEffect from 'react';
 import Image from 'next/image'
-import styles from './page.module.css'
+import Link from 'next/link';
+import styles from './styles/main.scss'
+import GalleryPS from './galleryPS'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <nav className="main-nav">
+        <a href="#main" className="main-nav__link">Główna</a>
+        <a href="#about" className="main-nav__link">O mnie</a>
+        <a href="#websites" className="main-nav__link">Strony</a>
+        <a href="#graphics" className="main-nav__link">Grafika</a>
+        <a href="#media" className="main-nav__link">Media</a>
+      </nav>
+      {/* <nav className="main-nav--hamburger">
+        <button className="hamburger-menu-close" id="hamburger-menu-close--js">Zamknij</button>
+        <a href="#main" className="main-nav__link">Główna</a>
+        <a href="#about" className="main-nav__link">O mnie</a>
+        <a href="#websites" className="main-nav__link">Strony</a>
+        <a href="#graphics" className="main-nav__link">Grafika</a>
+        <a href="#media" className="main-nav__link">Media</a>
+      </nav>
+      <button className="hamburger-menu--js" id="hamburger-menu--js">MENU</button> */}
+      <div className="main" id="main">
+        <header id="main-page-header">
+          <h1 className="h1--hidden">Strona z pracami Daniela Chudoby</h1>
+          <a href="mailto:danielchudoba@o2.pl" className="contact__item" id="contact__mail">
+            <svg
+              className="contact__icon"
+              width="100%"
+              height="100%"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+              />
+            </svg>
+            <p>danielchudoba@o2.pl</p></a
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+          <Link href="/" className="main__logo">
+            <svg id="main_logo" width="100%" height="100%" viewBox="0 0 2481 3508" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve">
+              <path id="white-border" d="M390.477,1150.8c16.754,6.719 36.221,60.967 28.06,80.574c-30.864,74.142 -77.624,171.45 -97.998,213.283l-244.348,0l-0,1445c-0.284,0.07 732.177,4.922 738.389,4.126c7.387,7.137 79.681,96.44 81.617,98.376c70.481,70.463 205.863,204.37 251.704,228.036c118.755,61.309 253.163,85.932 415.692,80.179c2.478,-0.087 83.253,-12.177 83.253,-12.177l2.214,-0.379c513.934,-87.756 876.997,-473.243 740.219,-960.585c-1.335,-4.755 -35.069,-94.59 -69.249,-150.597c-82.934,-135.898 -209.421,-244.921 -360.999,-319.604c-0.552,-0.272 -1.659,-412.379 -1.659,-412.379l-340.981,0c-19.532,-26.568 -45.219,-56.848 -68.858,-89.949c-24.194,-33.877 -46.905,-70.887 -52.072,-110.856c-8.294,-64.158 -4.101,-133.388 -25.554,-209.256c4.581,-6.237 35.357,-63.019 33.648,-83.186c-8.58,-101.246 -55.417,-228.024 -103.221,-304.063c-12.219,-19.436 -25.02,-35.764 -37.514,-48.679c0.288,-1.466 0.563,-2.956 0.824,-4.467c6.054,-35.062 6.056,-85.585 1.125,-135.612c-4.889,-49.61 -14.565,-98.658 -26.355,-131.448c-7.237,-20.126 -51.852,-83.157 -51.852,-83.157l-193.553,128.683c-43.571,-73.451 -111.746,-157.909 -150.198,-195.723c-23.112,-22.729 -89.32,-52.941 -89.32,-52.941l-115.734,318.17c0,0 -341.641,181.34 -341.641,181.34c0,0 -263.13,76.095 -263.13,76.095l-61.289,141.439c-0,0 50.042,122.47 99.249,193.561c11.545,16.678 31.362,33.423 57.645,48.246c43.689,24.642 108.674,46.607 161.886,67.946Z" style={{ fill: "#fff" }} />
+              <path id="black-border" d="M881.515,196.03l-100.634,283.36l-364.731,193.596l-244.39,70.675l-42.475,98.021c-0,0 39.03,95.832 85.317,162.705c43.87,63.381 282.204,103.998 282.825,157.177c0.21,17.961 -23.435,76.611 -51.623,139.997l-0.182,0.409l-1.358,3.048c-1.093,2.451 -2.19,4.902 -3.292,7.357l-0.284,0.634l-0.924,2.054c-1.669,3.71 -3.35,7.431 -5.038,11.153c-38.86,85.662 -81.409,171.532 -81.409,171.532l-224.032,0l-0,1340.54l0.147,-0.002c5.366,-0.018 156.362,0.813 322.38,1.577c126.635,0.32 279.482,0.595 437.834,0.776l-0.117,0.223l-0.125,0.239l-0.114,0.221l-0.117,0.227l-0.118,0.232l-0.11,0.218l-0.12,0.241l-0.105,0.211l-0.122,0.249l-0.1,0.205l-0.122,0.254l-0.097,0.203l-0.122,0.258l-0.094,0.201l-0.746,1.654l-0.088,0.201l-0.115,0.269l-0.086,0.2l-0.115,0.274l-0.082,0.196l-0.118,0.287l-0.076,0.186l-0.128,0.317l-0.063,0.157l-0.188,0.477c-10.498,26.898 -3.606,57.477 17.414,77.272c48.177,45.37 216.964,221.062 268.585,247.711c100.351,51.808 212.761,74.998 345.603,75.077l1.726,-0c13.804,-0.013 27.851,-0.275 42.129,-0.78c1.416,-0.05 2.83,-0.143 4.24,-0.278c16.776,-1.605 52.017,-7.57 71.465,-11.325l2.704,-0.229c480.647,-82.073 825.956,-438.124 698.036,-893.902c-1.217,-4.339 -32.264,-86.184 -63.45,-137.286c-77.844,-127.555 -196.872,-229.537 -339.145,-299.635l-0.758,-0.307c-6.952,-2.803 -13.474,-5.102 -18.694,-6.784c-1.117,-0.353 -2.198,-0.691 -3.223,-1.013c-4.923,-1.505 -8.146,-2.278 -8.612,-2.185l-0,-0.955c-0.005,-0.016 -0.005,-0.031 -0,-0.045l-0,-276.593l0.012,-0.015c0.048,-0.056 0.044,-0.085 -0.012,-0.085l-0,-118.93c-0,0 -314.725,1.307 -315.563,0c-29.89,-46.613 -92.32,-110.069 -125.491,-180.746c-10.084,-21.367 -17.47,-43.536 -20.419,-66.346c-8.309,-64.274 -2.764,-133.958 -26.631,-210.581c-1.026,-3.294 -1.405,-6.512 -1.265,-9.67c0.043,-0.971 0.135,-1.937 0.272,-2.897l0.05,-0.34c0.229,-1.485 0.566,-2.958 0.996,-4.42c4.564,-15.518 19.642,-29.77 28.288,-44.732l0.097,-0.169l0.167,-0.291c0.8,-1.408 1.541,-2.822 2.21,-4.243c2.657,-5.648 4.171,-11.42 3.662,-17.422c-11.3,-133.346 -94.793,-314.656 -149.64,-339.134c0.239,-0.376 0.475,-0.763 0.709,-1.161l0.174,-0.299l0.062,-0.109c0.442,-0.771 0.871,-1.577 1.288,-2.417c27.255,-54.896 4.439,-256.543 -29.55,-296.473l-200.595,133.359c-25.759,-62.521 -93.495,-153.114 -141.709,-207.424c-15.67,-15.737 -32.303,-31.138 -49.875,-46.203Zm748.497,3040.31l-0.225,0.019l-2.409,0.427l2.634,-0.446Zm-740.306,-395.818l-0.016,0.03c0.002,-0.011 0.008,-0.021 0.016,-0.03Z" style={{ fill: "#2c2a29" }} />
+              <path id="ear" d="M1018.06,481.13c-37.526,-8.613 -116.289,-9.799 -150.101,-0.577c15.01,-76.089 26.693,-191.45 26.693,-191.45c50.692,24.266 110.025,124.209 123.408,192.027Z" style={{ fill: "#d94d35" }} />
+              <path id="tail" d="M1836.16,2762.86c26.925,-17.295 77.23,-84.946 84.377,-100.255c17.873,-38.286 41.402,-115.04 32.027,-166.479c0.804,-3.599 -18.223,-96.707 -48.288,-137.901l-0,-390.065c129.865,63.984 238.949,156.578 310.004,273.009c27.195,44.564 54.658,115.755 55.72,119.538c116.117,413.728 -205.492,730.491 -641.794,804.991l-0.83,0.293c-2.586,1.648 -63.45,10.157 -68.167,10.37c-138.459,6.248 -253.312,-18.133 -354.48,-84.716c-72.414,-47.659 -154.727,-133.685 -206.988,-217.877c-8.675,-13.976 60.484,-5.514 60.484,-5.514c0,0 -100.916,-73.738 -106.022,-91.39c-8.634,-38.481 149.338,-50.99 270.761,5.583c90.079,41.97 189.567,67.817 293.662,55.457c12.38,-1.855 248.32,-29.3 319.534,-75.044Zm-353.887,133.88c0,-0 1.075,-0.26 0,-0l-169.974,55.602l241.512,75.514l-201.226,27.895c-0,-0 259.204,61.155 246.228,67.569c-117.226,57.942 -276.247,-3.971 -380.286,-69.8c-74.564,-47.179 -117.299,-90.788 -169.372,-159.151l93.262,5.279c-0,-0 -141.086,-100.93 -144.088,-111.307c18.26,-14.678 110.715,-11.392 224.635,39.223c109.025,48.44 234.263,72.329 259.309,69.176Z" style={{ fill: "#d94e33" }} />
+              <path id="face" d="M628.526,986.69c7.396,-35.123 -373.388,-103.822 -373.388,-103.822l-14.342,-30.156c22.59,-16.917 38.07,-34.125 63.086,-63.292l127.368,33.407l462.978,-16.99l-4.247,25.485l-135.921,89.197l271.841,97.693l-11.294,19.174l-158.606,31.796l148.662,186.89l-16.99,12.743l-119.716,-34.805c22.286,11.708 17.067,126.998 25.25,263.738l-446.427,0c51.941,-134.696 113.976,-284.938 162.865,-364.853l-16.99,-55.218l-299.82,-122.93l-14.505,-27.747c-0,-0 235.159,22.553 350.196,59.69Z" style={{ fill: "#fff" }} />
+              <path id="head" d="M871.166,1497.75c-12.078,-130.642 -29.54,-287.645 -42.609,-306.476c-0.531,-0.765 159.53,63.145 159.633,63.159c6.778,0.922 -168.663,-194.876 -168.663,-194.876c0,-0 193.387,-31.472 184.883,-34.976c-8.236,-3.393 -283.548,-101.739 -286.543,-101.356c-0.099,0.013 152.815,-98.556 161.824,-103.727c0.15,-0.029 0.241,-0.055 0.273,-0.08c0.261,-0.202 0.159,-0.168 -0.273,0.08c-12.143,2.348 -408.77,18.031 -435.512,24.415c-34.787,8.304 -145.878,-44.131 -145.878,-44.131c-12.121,17.161 -32.321,35.065 -57.505,52.932c0.077,0.099 41.617,83.415 52.624,101.582l111.206,38.905l212.914,71.903c-3.07,57.087 15.334,107.79 54.53,152.311c-5.617,-3.131 -66.732,-58.177 -66.732,-58.177l-42.655,58.177l26.275,-89.086c-0,-0 -7.035,-21.407 -8.909,-33.059c0,-0 -299.342,-130.664 -299.665,-131.184c-10.003,-16.103 -43.61,-85.868 -51.525,-103.149l-0.037,0.025c-31.24,-66.65 8.505,-78.53 8.505,-78.53c16.746,-3.064 50.144,-5.969 50.144,-5.969c0.1,-0.23 111.108,-5.783 167.673,-25.575c40.742,-14.255 81.119,-37.339 102.369,-75.44c24.988,-25.212 160.951,-124.253 256.394,-149.609c66.36,-17.629 206.105,-20.776 260.905,9.723c63.767,-46.011 160.839,-132.625 160.839,-132.625c22.353,46.074 5.472,145.809 -27.033,206.346c173.183,134.01 167.875,327.649 172.209,346.482c0,0 -101.323,-121.228 -85.083,-90.598c82.264,155.154 68.759,246.335 41.147,295.061c0,0 -48.936,-75.066 -46.73,-60.354c11.369,75.83 115.648,256.289 163.342,397.876l-582.337,0Zm-634.041,-653.436c9.82,-6.574 50.067,-43.921 54.979,-56.713l-49.363,4.63c0,0 -31.915,7.241 -5.616,52.083Z" style={{ fill: "#d94d35" }} />
+              <path id="shadow-tail" d="M2080.1,2785.08c32.72,-56.611 78.993,-217.932 76.346,-284.701c-1.277,-4.082 -2.215,-8.213 -2.789,-12.38c-5.844,-42.443 -20.762,-84.834 -45.499,-125.52l-203.88,-249.016l-0,-145.297c129.865,63.984 238.949,156.578 310.004,273.009c27.195,44.564 54.658,115.755 55.72,119.538c116.117,413.728 -205.492,730.491 -641.794,804.991l-0.83,0.293c-3.389,1.18 384.616,-249.301 451.047,-378.048c0.527,-1.019 1.087,-1.978 1.675,-2.869Z" style={{ fill: "#bd3d24" }} /
+              ><path id="eyelid" d="M588.797,790.568l6.882,-53.393l43.744,-31.011l39.19,-19.019l126.972,16.094l-23.867,21.914l-155.445,69.129l-37.476,-3.714Z" style={{ fill: "#2c2a29" }} />
+              <path id="eye" d="M627.658,745.683c1.971,3.103 5.131,5.052 9.079,6.154c6.543,1.828 14.928,1.527 24.391,-0.148c26.123,-4.622 59.747,-19.891 87.431,-37.385c-22.207,-2.367 -58.354,-5.983 -67.82,-5.506c-11.145,0.563 -21.905,6.994 -30.928,14.241c-10.345,8.308 -18.421,17.897 -22.153,22.643l-0,0.001Z" style={{ fill: "#f8f7f2" }} />
+              <path id="white-fur-tail" d="M1483.65,2902.87l-150.832,49.34l222.863,69.683l-1.007,12.156c-0,0 -168.4,23.345 -168.398,23.346c60.392,14.586 186.679,45.712 211.357,56.774c2.546,1.141 4.282,2.227 5.226,3.051c1.434,1.251 2.085,2.559 2.393,3.585c0.475,1.586 0.359,3.067 -0.194,4.446c-0.514,1.28 -1.481,2.691 -3.471,3.674c-26.053,12.878 -54.111,20.013 -83.161,22.571l-0.213,0.019l-39.414,0.773l-0.2,-0.009c-92.909,-4.136 -191.251,-47.818 -263.409,-93.475c-75.273,-47.628 -118.433,-91.632 -171.002,-160.645l5.325,-10.027c0,-0 71.875,4.068 71.874,4.067c-28.196,-20.402 -83.472,-60.789 -110.899,-83.479c-6.902,-5.71 -12.098,-10.368 -14.82,-13.382c-2.024,-2.241 -3.01,-4.127 -3.338,-5.258l-1.156,-3.999l3.245,-2.609c6.087,-4.893 19.476,-8.525 38.823,-8.944c41.188,-0.892 111.408,11.403 192.265,47.327c107.671,47.839 231.256,71.801 255.993,68.687l0.899,-0.113c0.044,-0.005 0.099,0.001 0.163,0.019c4.817,-0.233 5.613,2.615 4.999,5.639c1.34,2.776 1.267,5.728 -3.455,6.686c-0.058,0.034 -0.11,0.054 -0.155,0.059l-0.301,0.038Z" style={{ fill: "#fff" }} /
+              ><path d="M781.781,2560.91l-346.977,29.557c-13.042,1.111 -22.728,-1.002 -29.06,-6.34c-6.331,-5.337 -10.052,-14.527 -11.163,-27.568l-56.833,-667.184c-1.111,-13.042 1.002,-22.728 6.34,-29.06c5.337,-6.331 14.527,-10.052 27.568,-11.163l346.977,-29.557c85.8,-7.309 150.926,4.428 195.377,35.211c44.451,30.783 69.717,81.867 75.798,153.253l27.364,321.237c6.08,71.386 -10.181,126.007 -48.785,163.865c-38.604,37.857 -100.806,60.441 -186.606,67.749Zm-196.719,-531.855l29.82,350.065l122.523,-10.437c16.474,-1.403 28.307,-6.559 35.499,-15.469c7.192,-8.909 10.057,-21.944 8.595,-39.104l-21.312,-250.193c-1.462,-17.161 -6.476,-29.351 -15.042,-36.572c-8.566,-7.222 -21.086,-10.131 -37.56,-8.727l-122.523,10.437Z" style={{ fill: "#fff" }} />
+              <path d="M1659,2486.18l-251.224,21.4c-85.8,7.308 -150.926,-4.429 -195.377,-35.211c-44.451,-30.783 -69.716,-81.867 -75.797,-153.253l-27.277,-320.207c-6.081,-71.386 10.166,-126.179 48.741,-164.38c38.575,-38.201 100.762,-60.956 186.563,-68.265l251.223,-21.4c13.042,-1.111 22.728,1.003 29.06,6.34c6.331,5.338 10.052,14.527 11.163,27.569l10.613,124.582c1.11,13.042 -1.003,22.728 -6.34,29.06c-5.338,6.331 -14.527,10.052 -27.569,11.163l-206.95,17.629c-21.279,1.812 -36.701,7.447 -46.266,16.904c-9.565,9.457 -13.617,22.766 -12.155,39.926l20.874,245.046c1.462,17.16 7.677,29.248 18.645,36.265c10.969,7.016 27.092,9.618 48.371,7.806l206.95,-17.629c13.042,-1.111 22.728,1.003 29.06,6.34c6.331,5.337 10.052,14.527 11.163,27.569l10.437,122.523c1.111,13.041 -1.002,22.728 -6.34,29.059c-5.337,6.332 -14.527,10.053 -27.568,11.164Z" style={{ fill: "#fff" }} />
+            </svg>
+          </Link>
+          <a href="tel:+48501975313" className="contact__item" id="contact__phone">
+            <svg
+              className="contact__icon"
+              width="100%"
+              height="100%"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+              />
+            </svg>
+            <p>(+48) 501 975 313</p></a
+          >
+        </header>
+        <section className="content about-me" id="about">
+          <h2 className="about-me__title">O mnie</h2>
+          <article className="about-me__card">
+            <div className="look-at-this-photograph">
+              <img src="/images/Dan.jpg" alt="Daniel" />
+            </div>
+            <section>
+              <h4>Daniel Chudoba</h4>
+              <p>Magister inżynier informatyki. </p>
+              <br/>
+              <p>Tworzenie responsywnych stron internetowych, szablonów Wordpress, frontendu
+                aplikacji internetowych; znajomość HTML, CSS, JavaScript, Bootstrap, Sass, Git, React.</p>
+                <br/>
+              <p>Projektowanie grafiki – loga, szaty graficzne stron, ulotki, interfejsy użytkownika,
+                edycja video, znajomość pakietu Adobe oraz Affinity i Inkscape.</p>
+            </section>
+          </article>
+        </section>
+        <section className="content works_sites" id="websites">
+          <h2>Strony internetowe</h2>
+          <div className="works_sites__info">
+            <a
+              href="https://www.cws.org.pl"
+              title="strona CWS"
+              className="website-thmb"
+            >
+              <img src="images/website_CWS.jpg" alt="strona CWS" />
+              <p>CWS</p>
+            </a>
+            <a
+              href="https://www.edenporost.pl"
+              title="strona Eden Porost"
+              className="website-thmb"
+            >
+              <img src="images/website_Eden_Porost.jpg" alt="strona Eden Porost" />
+              <p>Eden Porost</p>
+            </a>
+          </div>
+        </section>
+        <section className="content gallery" id="graphics">
+          <h2>Projekty graficzne</h2>
+          <GalleryPS
+            galleryID="works"
+            images={[
+              {
+                largeURL:
+                  './images/cws.png',
+                thumbnailURL:
+                  'images/thumbnails/cws.png',
+                width: 1200,
+                height: 630,
+                caption: "Logo Centrum Wyszkolenia Strzeleckiego.",
+              },
+              {
+                largeURL:
+                  './images/czaszka.jpg',
+                thumbnailURL:
+                  'images/thumbnails/czaszka.jpg',
+                width: 212,
+                height: 300,
+                caption: "Grafika na koszulkę zawodów strzelectwa długodystansowego.",
+              },
+              {
+                largeURL:
+                  './images/czaszka2.jpg',
+                thumbnailURL:
+                  'images/thumbnails/czaszka2.jpg',
+                width: 300,
+                height: 291,
+                caption: "Koncept logo zawodów snajperskich.",
+              },
+              {
+                largeURL:
+                  './images/logo_eden.png',
+                thumbnailURL:
+                  'images/thumbnails/logo_eden.jpg',
+                width: 200,
+                height: 200,
+                caption: "Logo Stowarzyszenia Eden, które wynajmuje domki letniskowe.",
+              },
+              {
+                largeURL:
+                  './images/roboludek_druzyna.jpg',
+                thumbnailURL:
+                  'images/thumbnails/roboludek_druzyna.jpg',
+                width: 1000,
+                height: 1487,
+                caption: "Przedstawienie drużyny firmy Roboludek.",
+              },
+              {
+                largeURL:
+                  './images/roboludek_logo.jpg',
+                thumbnailURL:
+                  'images/thumbnails/roboludek_logo.jpg',
+                width: 200,
+                height: 200,
+                caption: "Logo organizacji Roboludek, uczącej robotyki i oprogramowania.",
+              },
+              {
+                largeURL:
+                  './images/roboludek_projekt.jpg',
+                thumbnailURL:
+                  'images/thumbnails/roboludek_projekt.jpg',
+                width: 1000,
+                height: 4100,
+                caption: "Szata graficzna strony Roboludek.",
+              },
+              {
+                largeURL:
+                  './images/rollup_cws.jpg',
+                thumbnailURL:
+                  'images/thumbnails/rollup_cws.jpg',
+                width: 1000,
+                height: 2100,
+                caption: "Projekt ulotki.",
+              },
+              {
+                largeURL:
+                  './images/snipers_mission.jpg',
+                thumbnailURL:
+                  'images/thumbnails/snipers_mission.jpg',
+                width: 300,
+                height: 168,
+                caption: "Koncept logo zawodów snajperskich.",
+              },
+              {
+                largeURL:
+                  './images/tps.jpg',
+                thumbnailURL:
+                  'images/thumbnails/tps.jpg',
+                width: 202,
+                height: 300,
+                caption: "Koncept grafiki promującej strzelectwo. Litery skrótu tworzą broń",
+              },
+            ]}
+          ></GalleryPS>
+        </section>
+        <section className='content main-page__media' id="media">
+          <h2>Social media i repozytoria</h2>
+          <p>Repozytorium, w którym udostępniam kod niektórych projektów: <a href="https://github.com/danchudoba">Github</a></p>
+          <p>Profil na Facebooku: <a href="facebook.com/chudy93">Facebook</a></p>
+          <p>Moje CV: <a href="/Daniel_Chudoba_CV_May_2023.pdf">Curriculum Vitae</a></p>
+        </section>
+        <footer className="main-page_footer">
+          <h4>made by <a href="facebook.com/chudy93">Dan Chudoba</a></h4>
+          <p>AD 2023</p>
+        </footer>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   )
 }
