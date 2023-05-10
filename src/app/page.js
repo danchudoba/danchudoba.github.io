@@ -3,6 +3,18 @@ import Image from 'next/image'
 import Link from 'next/link';
 import styles from './styles/main.scss'
 import GalleryPS from './galleryPS'
+import NextCors from 'nextjs-cors';
+
+// async function handler(req, res) {
+//   await NextCors(req, res, {
+//      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+//      origin: '*',
+//      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+//   });
+
+//   // Rest of the API logic
+//   res.json({ message: 'Hello NextJs Cors!' });
+// }
 
 export default function Home() {
   return (
@@ -73,7 +85,7 @@ export default function Home() {
           <h2 className="about-me__title">O mnie</h2>
           <article className="about-me__card">
             <div className="look-at-this-photograph">
-              <img src="/images/Dan.jpg" alt="Daniel" />
+              <img src="./images/Dan.jpg" alt="Daniel" />
             </div>
             <section>
               <h4>Daniel Chudoba</h4>
