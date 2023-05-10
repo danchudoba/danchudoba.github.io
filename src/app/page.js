@@ -221,11 +221,11 @@ export default function Home() {
         <section className='content main-page__media' id="media">
           <h2>Social media i repozytoria</h2>
           <p>Repozytorium, w którym udostępniam kod niektórych projektów: <a href="https://github.com/danchudoba">Github</a></p>
-          <p>Profil na Facebooku: <a href="facebook.com/chudy93">Facebook</a></p>
+          <p>Profil na Facebooku: <a href="https://facebook.com/chudy93">Facebook</a></p>
           <p>Moje CV: <a href="/Daniel_Chudoba_CV_May_2023.pdf">Curriculum Vitae</a></p>
         </section>
         <footer className="main-page_footer">
-          <h4>made by <a href="facebook.com/chudy93">Dan Chudoba</a></h4>
+          <h4>made by <a href="https://facebook.com/chudy93">Dan Chudoba</a></h4>
           <p>AD 2023</p>
         </footer>
       </div>
